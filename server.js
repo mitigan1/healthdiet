@@ -1,7 +1,7 @@
 const {processarFrases} = require('./scriptQuenia.js')
 const express = require('express');
 const app = express();
-const porta = 3000;
+const porta =  process.env.PORT || 3000;
 
 app.use(express.json()); // Middleware para analisar JSON
 
