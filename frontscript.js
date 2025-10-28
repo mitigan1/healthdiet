@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Envia os dados para o back-end usando a API Fetch
-            const resposta = await fetch('https://healthdiet.onrender.com:3000/processar', {
+            const resposta = await fetch('https://healthdiet.onrender.com:10000/processar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,4 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
