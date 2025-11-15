@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Devolutiva - Mapa do Comportamento Alimentar</title>
+    <!-- Adiciona a biblioteca para gerar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 800px; margin: 20px auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333366; }
+        #resultados { margin-top: 20px; }
+        .secao { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .secao:last-of-type { border-bottom: none; }
+        .secao h2 { border-bottom: 2px solid #4CAF50; padding-bottom: 5px; font-size: 1.2em; }
+        p { line-height: 1.6; }
+        button {
+            display: block;
+            width: 250px;
+            margin: 40px auto 20px;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover { background: #c9302c; }
+    </style>
+</head>
+<body>
+    <div class="container" id="conteudo-devolutiva">
+        <h1>Sua Devolutiva</h1>
+        <div id="resultados">
+            <!-- Os resultados serão inseridos aqui pelo JavaScript -->
+            <p>Carregando resultados...</p>
+        </div>
+    </div>
+    
+    <button id="btn-download-pdf">Baixar Devolutiva em PDF</button>
+
+    <script>
+        /**
+         * Esta função recebe os resultados numéricos e os transforma em texto (a devolutiva final).
+         * É AQUI que você deve personalizar as frases para a sua cliente nutricionista.
+         */
+        function gerarTextoDevolutiva(resultados) {
+            let htmlFinal = '<p>Olá! Este é o seu <strong>Mapa do Comportamento Alimentar</strong>. Ele foi gerado a partir das suas respostas e serve como um ponto de partida para a nossa jornada. O objetivo não é julgar, mas sim identificar seus pontos fortes e as áreas onde podemos focar nossos esforços para alcançar seus objetivos. Vamos analisar juntos:</p>';
+
+            // Bloco 1: Motivação e Consciência (Perguntas 101-111)
+            htmlFinal += '<div class="secao"><h2>Motivação e Consciência</h2>';
+            if (resultados.p_weight1 >= 9) {
+                htmlFinal += '<p><strong>Análise:</strong> Seus resultados mostram que você possui um alto nível de consciência sobre seu comportamento alimentar e uma forte motivação para a mudança. Este é o alicerce mais importante para construir hábitos saudáveis e duradouros.</p>';
+            } else if (resultados.p_weight1 >= 5) {
+                htmlFinal += '<p><strong>Análise:</strong> Você demonstra ter boa consciência sobre seu peso e os fatores que o influenciam. O caminho agora é fortalecer essa motivação, transformando-a em ações consistentes no dia a dia.</p>';
+            } else {
+                htmlFinal += '<p><strong>Análise:</strong> Este é um ponto que merece nossa atenção. Vamos trabalhar juntos para explorar e fortalecer sua motivação, encontrando os motivos mais profundos que tornam a mudança importante para você.</p>';
+            }
+            htmlFinal += '</div>';
+
+            // Bloco 2: Estratégias e Controle do Ambiente (Perguntas 112-123)
+            htmlFinal += '<div class="secao"><h2>Estratégias e Controle do Ambiente</h2>';
+            if (resultados.p_weight2 >= 10) {
+                htmlFinal += '<p><strong>Análise:</strong> Parabéns! Você já utiliza estratégias muito eficazes para controlar o ambiente ao seu redor, como planejar refeições e evitar gatilhos. Isso demonstra um excelente nível de organização e foco.</p>';
+            } else if (resultados.p_weight2 >= 6) {
+                htmlFinal += '<p><strong>Análise:</strong> Você já aplica algumas estratégias importantes para gerenciar suas escolhas. Podemos aprimorá-las, criando um ambiente que facilite ainda mais as decisões saudáveis e automáticas.</p>';
+            } else {
+                htmlFinal += '<p><strong>Análise:</strong> Identificamos aqui uma ótima oportunidade de crescimento. Desenvolver estratégias para organizar sua cozinha, planejar compras e lidar com situações sociais será um foco importante do nosso trabalho.</p>';
+            }
+            htmlFinal += '</div>';
+
+            // Bloco 3: Rede de Apoio e Influência Social (Perguntas 124-128)
+            htmlFinal += '<div class="secao"><h2>Rede de Apoio e Influência Social</h2>';
+            if (resultados.p_weight3 >= 4) {
+                htmlFinal += '<p><strong>Análise:</strong> Você possui uma excelente rede de apoio! Sua família e amigos são uma fonte de encorajamento, o que é um fator extremamente positivo e um grande aliado no seu processo de mudança de hábitos.</p>';
+            } else if (resultados.p_weight3 >= 2) {
+                htmlFinal += '<p><strong>Análise:</strong> Você conta com algum apoio de pessoas próximas, o que é um bom começo. Podemos trabalhar em como comunicar suas metas de forma ainda mais clara para fortalecer essa rede e torná-la uma poderosa fonte de motivação.</p>';
+            } else {
+                htmlFinal += '<p><strong>Análise:</strong> Identificamos que sua rede de apoio pode ser um ponto a ser desenvolvido. Sentir-se apoiado é fundamental. Vamos conversar sobre como envolver as pessoas que você ama no seu processo e construir um ambiente mais favorável aos seus objetivos.</p>';
+            }
+            htmlFinal += '</div>';
+            
+            // Bloco 4: Impacto Percebido do Peso na Qualidade de Vida (Perguntas 129-133)
+            htmlFinal += '<div class="secao"><h2>Impacto do Peso na Qualidade de Vida</h2>';
+            if (resultados.p_weight4 >= 4) {
+                htmlFinal += '<p><strong>Análise:</strong> Fica claro que o excesso de peso está gerando um impacto significativo no seu bem-estar, afetando suas atividades diárias e sua percepção social. Reconhecer isso é o primeiro passo para a mudança e estamos aqui para te ajudar a reverter este quadro.</p>';
+            } else if (resultados.p_weight4 >= 2) {
+                htmlFinal += '<p><strong>Análise:</strong> Você percebe que o seu peso já interfere em algumas áreas da sua vida. Essa consciência é importante para agirmos antes que o impacto se torne maior, focando em melhorar não apenas a balança, mas sua qualidade de vida como um todo.</p>';
+            } else {
+                htmlFinal += '<p><strong>Análise:</strong> O impacto do peso na sua rotina parece ser leve, o que é um ótimo sinal. Isso nos dá a oportunidade de trabalhar de forma preventiva, ajustando seus hábitos para garantir mais saúde e bem-estar a longo prazo, sem que o peso se torne uma limitação.</p>';
+            }
+            htmlFinal += '</div>';
+
+            // Conclusão
+            htmlFinal += '<div class="secao"><h2>Próximos Passos</h2><p>Este mapa é uma ferramenta valiosa que usaremos em nossas consultas para guiar nosso plano de ação. Lembre-se que a mudança é um processo contínuo. Celebre seus pontos fortes e encare as oportunidades de melhoria como desafios motivadores. Estou aqui para te apoiar em cada etapa do caminho!</p></div>';
+
+            return htmlFinal;
+        }
+
+
+        // Script principal que roda quando a página carrega
+        document.addEventListener('DOMContentLoaded', () => {
+            const resultadosDiv = document.getElementById('resultados');
+            const btnDownload = document.getElementById('btn-download-pdf');
+
+            const resultadosString = localStorage.getItem('resultadosDevolutiva');
+
+            if (resultadosString) {
+                const resultados = JSON.parse(resultadosString);
+
+                // Gera o texto final da devolutiva
+                const textoFinalHtml = gerarTextoDevolutiva(resultados);
+                resultadosDiv.innerHTML = textoFinalHtml;
+
+                // Limpa os dados para não serem reutilizados
+                localStorage.removeItem('resultadosDevolutiva');
+
+            } else {
+                resultadosDiv.innerHTML = '<p>Nenhum resultado encontrado. Por favor, <a href="formulario.html">preencha o formulário</a> primeiro.</p>';
+                btnDownload.style.display = 'none'; // Esconde o botão se não houver resultados
+            }
+        });
+
+        // Adiciona a funcionalidade ao botão de download
+        document.getElementById('btn-download-pdf').addEventListener('click', () => {
+            const elementoParaPdf = document.getElementById('conteudo-devolutiva');
+            
+            const opt = {
+              margin:       [1, 1, 1, 1], // Top, Left, Bottom, Right em polegadas
+              filename:     'minha_devolutiva_alimentar.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 1, useCORS: true },
+              jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Gera e baixa o PDF
+            html2pdf().set(opt).from(elementoParaPdf).save();
+        });
+    </script>
+</body>
+</html>
