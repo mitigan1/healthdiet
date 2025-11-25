@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Devolutiva - Mapa do Comportamento Alimentar</title>
     <!-- Adiciona a biblioteca para gerar PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        .container { max-width: 800px; margin: 20px auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #333366; }
-        #resultados { margin-top: 20px; }
-        .secao { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
-        .secao:last-of-type { border-bottom: none; }
-        .secao h2 { border-bottom: 2px solid #4CAF50; padding-bottom: 5px; font-size: 1.2em; }
-        p { line-height: 1.6; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #333366;
+        }
+
+        #resultados {
+            margin-top: 20px;
+        }
+
+        .secao {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .secao:last-of-type {
+            border-bottom: none;
+        }
+
+        .secao h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
         button {
             display: block;
             width: 250px;
@@ -28,9 +67,13 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        button:hover { background: #c9302c; }
+
+        button:hover {
+            background: #c9302c;
+        }
     </style>
 </head>
+
 <body>
     <div class="container" id="conteudo-devolutiva">
         <h1>Sua Devolutiva</h1>
@@ -39,7 +82,7 @@
             <p>Carregando resultados...</p>
         </div>
     </div>
-    
+
     <button id="btn-download-pdf">Baixar Devolutiva em PDF</button>
 
     <script>
@@ -50,11 +93,35 @@
         function gerarTextoDevolutiva(resultados) {
             let htmlFinal = '<p>Olá! Este é o seu <strong>Mapa do Comportamento Alimentar</strong>. Ele foi gerado a partir das suas respostas e serve como um ponto de partida para a nossa jornada. O objetivo não é julgar, mas sim identificar seus pontos fortes e as áreas onde podemos focar nossos esforços para alcançar seus objetivos. Vamos analisar juntos:</p>';
 
+            // Seção 1
+            htmlSaida += `<h3>Isto é o que você deve manter</h3>\n`;
+            for (let numero of resultados.grupo1) {
+                if (mapaFrases[numero]) {
+                    htmlSaida += `<p>${mapaFrases[numero]}</p>\n`;
+                }
+            }
+
+            // Seção 2
+            htmlSaida += `<h3>Isto é o que você talvez ainda não esteja pronto para mudar</h3>\n`;
+            for (let numero of resultados.grupo2) {
+                if (mapaFrases[numero]) {
+                    htmlSaida += `<p>${mapaFrases[numero]}</p>\n`;
+                }
+            }
+
+            // Seção 3
+            htmlSaida += `<h3>Isto é o que você pode mudar</h3>\n`;
+            for (let numero of resultados.grupo3) {
+                if (mapaFrases[numero]) {
+                    htmlSaida += `<p>${mapaFrases[numero]}</p>\n`;
+                }
+            }
+
             // Bloco 1: Motivação e Consciência (Perguntas 101-111)
             htmlFinal += '<div class="secao"><h2>Motivação e Consciência</h2>';
-            if (resultados.p_weight1 >= 9) {
+            if (resultados.p_weight1 >= 38) {
                 htmlFinal += '<p><strong>Análise:</strong> Seus resultados mostram que você possui um alto nível de consciência sobre seu comportamento alimentar e uma forte motivação para a mudança. Este é o alicerce mais importante para construir hábitos saudáveis e duradouros.</p>';
-            } else if (resultados.p_weight1 >= 5) {
+            } else if (resultados.p_weight1 >= 19) {
                 htmlFinal += '<p><strong>Análise:</strong> Você demonstra ter boa consciência sobre seu peso e os fatores que o influenciam. O caminho agora é fortalecer essa motivação, transformando-a em ações consistentes no dia a dia.</p>';
             } else {
                 htmlFinal += '<p><strong>Análise:</strong> Este é um ponto que merece nossa atenção. Vamos trabalhar juntos para explorar e fortalecer sua motivação, encontrando os motivos mais profundos que tornam a mudança importante para você.</p>';
@@ -63,9 +130,9 @@
 
             // Bloco 2: Estratégias e Controle do Ambiente (Perguntas 112-123)
             htmlFinal += '<div class="secao"><h2>Estratégias e Controle do Ambiente</h2>';
-            if (resultados.p_weight2 >= 10) {
+            if (resultados.p_weight2 >= 40) {
                 htmlFinal += '<p><strong>Análise:</strong> Parabéns! Você já utiliza estratégias muito eficazes para controlar o ambiente ao seu redor, como planejar refeições e evitar gatilhos. Isso demonstra um excelente nível de organização e foco.</p>';
-            } else if (resultados.p_weight2 >= 6) {
+            } else if (resultados.p_weight2 >= 20) {
                 htmlFinal += '<p><strong>Análise:</strong> Você já aplica algumas estratégias importantes para gerenciar suas escolhas. Podemos aprimorá-las, criando um ambiente que facilite ainda mais as decisões saudáveis e automáticas.</p>';
             } else {
                 htmlFinal += '<p><strong>Análise:</strong> Identificamos aqui uma ótima oportunidade de crescimento. Desenvolver estratégias para organizar sua cozinha, planejar compras e lidar com situações sociais será um foco importante do nosso trabalho.</p>';
@@ -74,20 +141,20 @@
 
             // Bloco 3: Rede de Apoio e Influência Social (Perguntas 124-128)
             htmlFinal += '<div class="secao"><h2>Rede de Apoio e Influência Social</h2>';
-            if (resultados.p_weight3 >= 4) {
+            if (resultados.p_weight3 >= 18) {
                 htmlFinal += '<p><strong>Análise:</strong> Você possui uma excelente rede de apoio! Sua família e amigos são uma fonte de encorajamento, o que é um fator extremamente positivo e um grande aliado no seu processo de mudança de hábitos.</p>';
-            } else if (resultados.p_weight3 >= 2) {
+            } else if (resultados.p_weight3 >= 9) {
                 htmlFinal += '<p><strong>Análise:</strong> Você conta com algum apoio de pessoas próximas, o que é um bom começo. Podemos trabalhar em como comunicar suas metas de forma ainda mais clara para fortalecer essa rede e torná-la uma poderosa fonte de motivação.</p>';
             } else {
                 htmlFinal += '<p><strong>Análise:</strong> Identificamos que sua rede de apoio pode ser um ponto a ser desenvolvido. Sentir-se apoiado é fundamental. Vamos conversar sobre como envolver as pessoas que você ama no seu processo e construir um ambiente mais favorável aos seus objetivos.</p>';
             }
             htmlFinal += '</div>';
-            
+
             // Bloco 4: Impacto Percebido do Peso na Qualidade de Vida (Perguntas 129-133)
             htmlFinal += '<div class="secao"><h2>Impacto do Peso na Qualidade de Vida</h2>';
-            if (resultados.p_weight4 >= 4) {
+            if (resultados.p_weight4 >= 18) {
                 htmlFinal += '<p><strong>Análise:</strong> Fica claro que o excesso de peso está gerando um impacto significativo no seu bem-estar, afetando suas atividades diárias e sua percepção social. Reconhecer isso é o primeiro passo para a mudança e estamos aqui para te ajudar a reverter este quadro.</p>';
-            } else if (resultados.p_weight4 >= 2) {
+            } else if (resultados.p_weight4 >= 9) {
                 htmlFinal += '<p><strong>Análise:</strong> Você percebe que o seu peso já interfere em algumas áreas da sua vida. Essa consciência é importante para agirmos antes que o impacto se torne maior, focando em melhorar não apenas a balança, mas sua qualidade de vida como um todo.</p>';
             } else {
                 htmlFinal += '<p><strong>Análise:</strong> O impacto do peso na sua rotina parece ser leve, o que é um ótimo sinal. Isso nos dá a oportunidade de trabalhar de forma preventiva, ajustando seus hábitos para garantir mais saúde e bem-estar a longo prazo, sem que o peso se torne uma limitação.</p>';
@@ -127,13 +194,13 @@
         // Adiciona a funcionalidade ao botão de download
         document.getElementById('btn-download-pdf').addEventListener('click', () => {
             const elementoParaPdf = document.getElementById('conteudo-devolutiva');
-            
+
             const opt = {
-              margin:       [1, 1, 1, 1], // Top, Left, Bottom, Right em polegadas
-              filename:     'minha_devolutiva_alimentar.pdf',
-              image:        { type: 'jpeg', quality: 0.98 },
-              html2canvas:  { scale: 1, useCORS: true },
-              jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+                margin: [1, 1, 1, 1], // Top, Left, Bottom, Right em polegadas
+                filename: 'minha_devolutiva_alimentar.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 1, useCORS: true },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
 
             // Gera e baixa o PDF
@@ -141,4 +208,5 @@
         });
     </script>
 </body>
+
 </html>

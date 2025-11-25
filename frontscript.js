@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('questionarioForm');
 
-    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbw6xRos5-y6wi_ZW9uZDTcKrWiznnMPnt2RuH5Hkz1EF7ZsUcNnxmnxzOWLRbAts-X7/exec";
+    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbwMdvnz4A6pHgdAfscBotH4bMqMHheAAbwcIh9ifVZ0BtUv9PoCw73TTjDwu8U8ApLM/exec";
 
     formulario.addEventListener('submit', async (event) => {
         // Previne o envio padrão do formulário, que recarregaria a página
@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let p_weight3 = 0;
         let p_weight4 = 0;
         let numeroSoma = 0;
+        const grupo1 = [];
+        const grupo2 = [];
+        const grupo3 = [];
 
         for (const [numeroStr, letra] of Object.entries(dadosRadios)) {
             const numero = parseInt(numeroStr);
@@ -42,10 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if(numero > 123 && numero <= 128){ p_weight3 += numeroSoma; }
                 else if(numero > 128 && numero <= 133){ p_weight4 += numeroSoma; }
             }
+            else if (letra === 'D' || letra ==='E') {
+            grupo1.push(numero);
+        } else if (letra === 'A' || letra === 'F') {
+            grupo2.push(numero);
+        } else if (letra === 'B' || letra ==='C') {
+            grupo3.push(numero);
+        }
         }
         
         // 3. Criar o objeto de resultados que a 'devolutiva.html' e o GAS esperam
         const resultados = {
+            email: dadosRadios['email'] || '',
+            grupo1: grupo1,
+            grupo2: grupo2,
+            grupo3: grupo3,
             p_weight1: p_weight1,
             p_weight2: p_weight2,
             p_weight3: p_weight3,
