@@ -96,24 +96,24 @@
             // Seção 1
             htmlFinal += `<h3>Isto é o que você deve manter</h3>\n`;
             for (let numero of resultados.grupo1) {
-                if (mapaFrases[numero]) {
-                    htmlSaida += `<p>${mapaFrases[numero]}</p>\n`;
+                if (resultados.mapaFrases[numero]) {
+                    htmlFinal += `<p>${resultados.mapaFrases[numero]}</p>\n`;
                 }
             }
 
             // Seção 2
             htmlFinal += `<h3>Isto é o que você talvez ainda não esteja pronto para mudar</h3>\n`;
             for (let numero of resultados.grupo2) {
-                if (mapaFrases[numero]) {
-                    htmlSaida += `<p>${mapaFrases[numero]}</p>\n`;
+                if (resultados.mapaFrases[numero]) {
+                    htmlFinal += `<p>${resultados.mapaFrases[numero]}</p>\n`;
                 }
             }
 
             // Seção 3
             htmlFinal += `<h3>Isto é o que você pode mudar</h3>\n`;
             for (let numero of resultados.grupo3) {
-                if (mapaFrases[numero]) {
-                    htmlSaida += `<p>${mapaFrases[numero]}</p>\n`;
+                if (resultados.mapaFrases[numero]) {
+                    htmlFinal += `<p>${resultados.mapaFrases[numero]}</p>\n`;
                 }
             }
 

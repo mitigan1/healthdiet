@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('questionarioForm');
 
-    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbyZAXrpgSfhZgtyjOgx36SRQvlXyUUL6Zzafu87OYqlAwV6h9f7JkE8EF02qxC2Mtiv/exec";
+    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbxDj0aJTfui6KZ3K6RdsSItztX3NHdnCxaTPxf6DcowAVnlN4RX2NHPk8d6RbrltUop/exec";
 
     formulario.addEventListener('submit', async (event) => {
         // Previne o envio padrão do formulário, que recarregaria a página
@@ -20,7 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 dadosRadios[radio.name] = radio.value;
             }
         });
-
+        const mapaFrases = {};
+        fetch("myText.txt")
+        .then((res) => res.text())
+        .then((text) => {
+            const regex = /(\d+)\.\s([^;]+);/g;
+        let match;
+        while ((match = regex.exec(text)) !== null) {
+        const numero = parseInt(match[1]);
+        const frase = match[2].trim();
+        mapaFrases[numero] = frase;
+        }
+        })
+        .catch((e) => console.error(e));
         // 2. Calcular os P-Weights
         let p_weight1 = 0;
         let p_weight2 = 0;
@@ -57,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Criar o objeto de resultados que a 'devolutiva.html' e o GAS esperam
         const resultados = {
             email: dadosRadios['email'] || '',
+            mapaFrases: mapaFrases,
             grupo1: grupo1,
             grupo2: grupo2,
             grupo3: grupo3,

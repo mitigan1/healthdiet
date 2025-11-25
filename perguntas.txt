@@ -1,0 +1,97 @@
+1. Tomar café da manhã.;
+2. Realizar pelo menos metade das refeições diárias em casa com alimentos frescos ou semi-processados, como arroz, feijão, macarrão, carnes, frutas e vegetais.;
+3. Quando almoço ou janto fora de casa, escolho lugares que oferecem saladas, carnes grelhadas, frutas, cereais integrais, grãos e leguminosas e vegetais.;
+4. Eu consumo biscoitos, cookies, bolos, salgadinhos e produtos semelhantes no máximo uma vez a cada quinze dias.
+(A questão refere-se à alimentos comprados na rua).;
+5. Eu planejo antecipadamente o que vou comer, onde vou comer e a quantidade que vou comer.;
+6. Eu consumo sorvetes e chocolates no máximo uma vez a cada quinze dias.;
+7. Quando não tenho tempo para cozinhar, eu encomendo marmitas de comida caseira ou compro porções de comida (como arroz, feijão, carnes ou peixes e salada), ou conto com alguém que possa cozinhar para mim.;
+8. Eu consumo produtos como salsicha, linguiça, presunto, peito de peru, salame, macarrão instantâneo, nuggets, temperos prontos, margarina, maionese, requeijão no máximo uma vez a cada quinze dias.;
+9. Quando estou fora de casa, opto por lanches saudáveis como por exemplo: frutas, salada de frutas, suco natural, Whey protein, amendoim, castanhas, batata doce assada ou sanduíche simples.;
+10. Eu consumo pizzas, fritas e hambúrgueres congelados no máximo uma vez a cada quinze dias.;
+11. Eu evito ter em casa ou no trabalho alimentos que me sinto tentado(a) a comer quantidades maiores do que eu gostaria.;
+12. Eu consumo achocolatados, bebidas lácteas adoçadas, sucos em pó ou de caixinha, refrigerantes, bebidas energéticas no máximo uma vez a cada quinze dias.;
+13. Eu peço tele-entrega de comidas rápidas (fast-foods) no máximo uma vez por mês.;
+14. Meu consumo de álcool é limitado a no máximo uma vez por semana, por exemplo, uma taça de vinho ou espumante ou um chopp pequeno, ou uma dose de gin ou 1 dose de destilado.;
+15. Eu consumo de 2 a 3 frutas por dia, às vezes mais.;
+16. Eu consumo de 2 a 3 porções de vegetais crus ou cozidos por dia, às vezes mais.
+(Uma porção é igual à uma concha pequena aproximadamente);
+17. Eu consumo no mínimo uma porção de vegetais folhosos por dia, às vezes mais.
+(Uma porção é igual a 3 folhas ou mais de alface ou couve ou espinafre ou qualquer outro vegetal folhoso);
+18. Eu consumo aproximadamente 1 porção ou mais de nozes, castanhas ou amêndoas por semana, às vezes mais.
+(Uma porção é equivalente à 3 unidades aproximadamente);
+19. Eu bebo de 1,5 a 2 litros de água por dia, às vezes mais.;
+20. Eu como devagar, mastigando bem os alimentos antes de engolir.;
+21. Quando sinto vontade de comer, tento me distrair com outras atividades que não envolvam comida.
+(Por exemplo: escovar os dentes, beber água, fazer exercícios, desenhar, meditar, ouvir música, conversar com alguém);
+22. Eu uso temperos naturais na minha alimentação, como alho, cebola, manjericão, alecrim, sálvia, entre outros.;
+23. Eu adiciono fibras à minha alimentação, como aveia, psyllium, chia, linhaça uma vez ao dia, às vezes mais.;
+24. Eu leio o rótulo dos produtos alimentícios antes de decidir comprar.
+(Tabela nutricional e lista de ingredientes);
+25. Eu consigo parar de comer quando me sinto satisfeito(a), mesmo que a refeição esteja muito gostosa.;
+26. Quando eu sinto fome, busco algo saudável para comer.
+(Algo saudável, envolve grãos, leguminosas, verduras, frutas, cereais integrais, laticínios, carnes, ovos, peixes e frango);
+27. Eu durmo 7 horas por noite, às vezes mais.;
+28. Eu espero cerca de 2 horas para dormir, após a minha última refeição.;
+29. À noite, eu escolho refeições leves.
+(Refeições leves são isentas de frituras não tem excesso de açúcar, nem excesso de carboidratos refinados. São ingeridas em quantidade moderada sem causar estufamento ou desconforto gástrico);
+30. Durante a tarde, eu faço um lanche nutritivo para me sentir satisfeito até o jantar.
+(Lanche nutritivo é rico em fibras, possui quantidades moderadas de proteínas e cereais integrais, como por exemplo, um sanduíche de pão integral, frango desfiado, tomate e alface);
+31. Tenho o hábito de me pesar.;
+32. Eu não belisco entre as principais refeições.;
+33. Eu procuro aprender mais sobre alimentação saudável.;
+34. Minha alimentação não muda mesmo quando estou preocupado(a).;
+35. Meu estado emocional não afeta minha alimentação.;
+36. Minha alimentação não muda mesmo quando estou triste.;
+37. Eu evito alimentos que me levam a comer à mais do que eu preciso.;
+38. Minha alimentação não muda mesmo quando estou muito atarefado(a).;
+39. Quando como em excesso, eu não sinto culpa.;
+40. Minha alimentação não muda mesmo quando estou ansioso(a).;
+41. As minhas emoções não afetam a minha maneira de comer.;
+42. Depois de comer demais, tento voltar a uma alimentação equilibrada o mais rápido possível.;
+43. Ao fazer refeições com um grupo de pessoas, costumo planejar minha alimentação para não exagerar.;
+44. Eu não consumo alimentos que não desejo apenas para agradar alguém.;
+45. Eu sou meu próprio motivador quanto aos meus objetivos de peso corporal e saúde.;
+46. Eu prefiro não ir a lugares onde as pessoas comem e bebem muito.;
+47. Eu converso com a família e amigos sobre minhas escolhas alimentares saudáveis para contar com o apoio deles na busca ou manutenção do peso saudável.;
+48. Tenho sempre em mente evitar alimentos tentadores para atingir ou manter meu peso saudável.;
+49. Eu escolho minha atividade física conforme minha meta de perda de peso.;
+50. Meu estado emocional não interfere na minha prática de atividade física.;
+51. Eu me exercito 150 minutos por semana ou mais (ex.30 min 5 x na semana ou 50 min 3 vezes na semana).;
+101. Agora me dou conta que tenho um problema de sobrepeso.;
+102. Me preocupa muito a ideia de seguir engordando mais e mais.;
+103. Emagrecer me faria melhorar minhas relações com os demais.;
+104. Meu excesso de peso faz com que eu me sinta mal.;
+105. Sinto-me culpado (a) quando como em excesso.;
+106. Se perdesse peso, me sentiria melhor comigo mesmo (a).;
+107. Não gosto do meu peso atual.;
+108. Se perdesse peso, seria mais feliz.;
+109. Fico feliz quando sou capaz de me controlar com a comida.;
+110. Quando perco peso me sinto muito orgulhoso (a) de mim mesmo (a).;
+111. Me comprometo a perder peso.;
+112. Busco informação sobre o tipo de alimentação que pode me ajudar a perder peso.;
+113. Guardo os alimentos para evitar beliscar.;
+114. Digo-me palavras positivas para evitar comer mais do que devo.;
+115. Tento não ter comida a vista.;
+116. Quando sinto vontade de comer, faço outras atividades para evitar comer.;
+117. Tenho a dispensa e geladeira vazias de alimentos para comer ou beliscar.;
+118. Tenho aprendido a controlar meu desejo de comer.;
+119. Evito lugares onde as pessoas comem muito.;
+120. Tenho aprendido habilidades para reduzir meu apetite (meditação e relaxamento).;
+121. Quando estou de dieta evito comer com pessoas que comem em excesso.;
+122. Evito comprar alimentos com alto teor de calorias.;
+123. Prefiro comer em casa e cozinhar minha própria comida para evitar comer em excesso.;
+124. Me dou conta que há cada vez mais pessoas que me animam para que eu perca peso.;
+125. Minha família e amigos me dão os parabéns quando não como em excesso.;
+126. Meus familiares e amigos me dão os parabéns quando eu consigo perder peso.;
+127. As pessoas à minha volta me apoiam para que eu perca peso.;
+128. Tenho alguém que me escuta quando necessito falar do meu excesso de peso.;
+129. A visão que a sociedade tem das pessoas obesas me afeta emocionalmente.;
+130. Meu peso limita minhas relações com os demais.;
+131. Meu peso atual dificulta minhas atividades cotidianas.;
+132. Meus familiares e amigos estão preocupados com o meu peso.;
+133. A maioria dos meus problemas de saúde se devem ao meu sobrepeso.;
+134. Essa descrição reflete de alguma maneira sua história com o peso corporal?;
+135. Você sente que o seu maior desafio é manter os resultados depois de um período inicial de sucesso?;
+136. O que está acontecendo na sua vida neste momento (demandas, estresse, ansiedade) que pode estar sabotando o seu esforço com o peso corporal?;
+137. O que você acredita que o impede de ter sucesso permanente?;
