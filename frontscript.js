@@ -27,18 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const url = `raw.githubusercontent.com${username}/${repo}/${branch}/${file_path}`;
         const mapaFrases = {};
-        await fetch(url)
-        .then((res) => res.text())
-        .then((text) => {
-            const regex = /(\d+)\.\s([^;]+);/g;
+        response = await fetch(url)
+        if (!response.ok) {
+                throw new Error("Não foi possível ler o arquivo de perguntas. Verifique se 'quenia perguntas.txt' está na pasta.");
+            }
+
+        const text = await response.text();
+        
+        const regex = /(\d+)\.\s([^;]+);/g;
         let match;
         while ((match = regex.exec(text)) !== null) {
         const numero = parseInt(match[1]);
         const frase = match[2].trim();
         mapaFrases[numero] = frase;
         }
-        })
-        .catch((e) => console.error(e));
         // 2. Calcular os P-Weights
         let p_weight1 = 0;
         let p_weight2 = 0;
