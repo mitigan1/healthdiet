@@ -20,8 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 dadosRadios[radio.name] = radio.value;
             }
         });
+        const username = 'mitigan1';
+        const repo = 'healthdiet';
+        const branch = 'main'; // e.g., 'main' or 'master'
+        const file_path = 'perguntas.txt'; // e.g., 'data/users.json'
+
+        const url = `raw.githubusercontent.com${username}/${repo}/${branch}/${file_path}`;
         const mapaFrases = {};
-        fetch("myText.txt")
+        fetch(url)
         .then((res) => res.text())
         .then((text) => {
             const regex = /(\d+)\.\s([^;]+);/g;
