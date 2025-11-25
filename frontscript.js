@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const url = `raw.githubusercontent.com${username}/${repo}/${branch}/${file_path}`;
         const mapaFrases = {};
-        fetch(url)
+        await fetch(url)
         .then((res) => res.text())
         .then((text) => {
             const regex = /(\d+)\.\s([^;]+);/g;
