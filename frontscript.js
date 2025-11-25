@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('questionarioForm');
 
-    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbwMdvnz4A6pHgdAfscBotH4bMqMHheAAbwcIh9ifVZ0BtUv9PoCw73TTjDwu8U8ApLM/exec";
+    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbyZAXrpgSfhZgtyjOgx36SRQvlXyUUL6Zzafu87OYqlAwV6h9f7JkE8EF02qxC2Mtiv/exec";
 
     formulario.addEventListener('submit', async (event) => {
         // Previne o envio padrão do formulário, que recarregaria a página
