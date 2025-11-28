@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('questionarioForm');
 
-    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbxDj0aJTfui6KZ3K6RdsSItztX3NHdnCxaTPxf6DcowAVnlN4RX2NHPk8d6RbrltUop/exec";
+    const urlDoGoogleScript = "https://script.google.com/macros/s/AKfycbx15RsfrFQJjyF0brvREMqmgtXNBGx_UAAJwG-AyfRi3gXWcxWTMT_eM-5QHupBWmH3/exec";
 
     formulario.addEventListener('submit', async (event) => {
         // Previne o envio padrão do formulário, que recarregaria a página
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
        // 1. Coletar dados dos radios
         const dadosRadios = {};
         const radios = formulario.querySelectorAll('input[type="radio"]');
+        const emails = formulario.querySelectorAll('input[type="email"]');
         radios.forEach(radio => {
             if (radio.checked) {
                 dadosRadios[radio.name] = radio.value;
@@ -25,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const branch = 'main'; // e.g., 'main' or 'master'
         const file_path = 'perguntas.txt'; // e.g., 'data/users.json'
 
-        const url = `raw.githubusercontent.com${username}/${repo}/${branch}/${file_path}`;
+        const url = `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${file_path}`;
         const mapaFrases = {};
         response = await fetch(url)
         if (!response.ok) {
-                throw new Error("Não foi possível ler o arquivo de perguntas. Verifique se 'quenia perguntas.txt' está na pasta.");
+                throw new Error("Não foi possível ler o arquivo de perguntas. Verifique se 'perguntas.txt' está na pasta.");
             }
 
         const text = await response.text();
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 3. Criar o objeto de resultados que a 'devolutiva.html' e o GAS esperam
         const resultados = {
-            email: dadosRadios['email'] || '',
+            email: emails['email'] || '',
             mapaFrases: mapaFrases,
             grupo1: grupo1,
             grupo2: grupo2,
