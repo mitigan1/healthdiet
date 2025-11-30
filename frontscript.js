@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
        // 1. Coletar dados dos radios
         const dadosRadios = {};
         const radios = formulario.querySelectorAll('input[type="radio"]');
-        const emails = formulario.querySelectorAll('input[type="email"]');
+        const emails = formulario.getElementById('emailUsuario');
         radios.forEach(radio => {
             if (radio.checked) {
                 dadosRadios[radio.name] = radio.value;
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 3. Criar o objeto de resultados que a 'devolutiva.html' e o GAS esperam
         const resultados = {
-            email: emails['email'] || '',
+            email: emails.value,
             mapaFrases: mapaFrases,
             grupo1: grupo1,
             grupo2: grupo2,
