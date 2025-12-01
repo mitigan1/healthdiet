@@ -197,18 +197,7 @@
 
         // Adiciona a funcionalidade ao botão de download
         document.getElementById('btn-download-pdf').addEventListener('click', () => {
-            const elementoParaPdf = document.getElementById('conteudo-devolutiva');
-
-            const opt = {
-                margin: [1, 1, 1, 1], // Top, Left, Bottom, Right em polegadas
-                filename: 'minha_devolutiva_alimentar.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 1, useCORS: true },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-            };
-
-            // Gera e baixa o PDF
-            html2pdf().set(opt).from(elementoParaPdf).save();
+            window.print();
         });
     </script>
 </body>

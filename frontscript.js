@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
        // 1. Coletar dados dos radios
         const dadosRadios = {};
         const radios = formulario.querySelectorAll('input[type="radio"]');
-        const emails = formulario.getElementById('emailUsuario');
+        const emails = formulario.querySelector('input[name="email"]');
         radios.forEach(radio => {
             if (radio.checked) {
                 dadosRadios[radio.name] = radio.value;
